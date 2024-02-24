@@ -85,7 +85,13 @@ resource "aws_route_table" "router" {
   }
 }
 
-resource "aws_route_table_association" "assoc" {
+resource "aws_route_table_association" "router-ta" {
   subnet_id      = aws_subnet.private_subnet_a.id
   route_table_id = aws_route_table.router.id
+}
+
+resource "aws_instance" "application" {
+  ami = var.ami
+  instance_type = "t2.micro"
+  subnet_id = aws_subnet.public_subnet_a.id
 }

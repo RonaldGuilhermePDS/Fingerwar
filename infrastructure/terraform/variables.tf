@@ -22,3 +22,8 @@ variable "database_password" {
   type        = string
   description = "value"
 }
+
+variable "ami" {
+  type        = string
+  description = "value"
+}
