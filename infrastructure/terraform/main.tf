@@ -76,3 +76,11 @@ resource "aws_nat_gateway" "nat_ig" {
   depends_on = [aws_internet_gateway.ig]
 }
 
+resource "aws_route_table" "router" {
+  vpc_id = aws_vpc.vpc_dev.id
+
+  route {
+    cidr_block = "0.0.0.0/0"
+    gateway_id = aws_nat_gateway.nat_ig.id
+  }
+}
