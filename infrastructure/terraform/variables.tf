@@ -1,14 +1,14 @@
 variable "aws_region" {
-  type = string
+  type        = string
   description = ""
 }
 
 variable "access_key" {
-  type = string
+  type        = string
   description = ""
 }
 
 variable "secret_key" {
-  type = string
+  type        = string
   description = ""
 }
