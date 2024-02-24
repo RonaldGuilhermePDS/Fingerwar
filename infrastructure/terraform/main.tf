@@ -84,3 +84,8 @@ resource "aws_route_table" "router" {
     gateway_id = aws_nat_gateway.nat_ig.id
   }
 }
+
+resource "aws_route_table_association" "assoc" {
+  subnet_id      = aws_subnet.private_subnet_a.id
+  route_table_id = aws_route_table.router.id
+}
