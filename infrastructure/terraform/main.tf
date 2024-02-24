@@ -64,3 +64,7 @@ resource "aws_db_subnet_group" "db_dev_subnet" {
 resource "aws_eip" "nat" {
   depends_on = [aws_internet_gateway.ig]
 }
+
+resource "aws_internet_gateway" "ig" {
+  vpc_id = aws_vpc.vpc_dev.id
+}
