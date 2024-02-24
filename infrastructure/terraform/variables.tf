@@ -14,11 +14,11 @@ variable "secret_key" {
 }
 
 variable "database_username" {
-  type = string
+  type        = string
   description = "value"
 }
 
 variable "database_password" {
-  type = string
+  type        = string
   description = "value"
 }

@@ -60,3 +60,7 @@ resource "aws_db_subnet_group" "db_dev_subnet" {
   name       = "dbdevsubnet"
   subnet_ids = [aws_subnet.private_subnet_a.id, aws_subnet.private_subnet_b.id]
 }
+
+resource "aws_eip" "nat" {
+  depends_on = [aws_internet_gateway.ig]
+}
